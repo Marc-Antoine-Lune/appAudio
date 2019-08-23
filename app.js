@@ -175,14 +175,14 @@ async function audioHandler(v) {
     data.rows.forEach(async rows => {
         let idUser = rows.idUser;
         var sexe;
-        let responseSexe = await fetch(`${urlApi}/userSex/?idUser=` + idUser);
-        let dataSex = await responseSexe.json();
-        console.log(dataSex);
-        if (dataSex.rows[0].sexe == "0") sexe = "Homme";
+        let responseUser = await fetch(`${urlApi}/userData/?idUser=` + idUser);
+        let userData = await responseSexe.json();
+
+        if (userData.rows[0].sexe == "0") sexe = "Homme";
         else sexe = "Femme";
         var theRow = rows.audio;
         var theSentence = document.createElement('span');
-        theSentence.innerHTML = `Prononcer par ${sexe} originaire de test`
+        theSentence.innerHTML = `Prononcer par ${sexe}, ${userData.rows[0].age} originaire de ${userData.rows[0].residence}`
         let theToken = await fetch(`${urlApi}/urlAudio/?fileName=` + theRow);
         var url = url1 + rows.audio + url2 + theToken.token;
         var theDiv = document.getElementById("audio1");
