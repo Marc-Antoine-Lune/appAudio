@@ -176,7 +176,7 @@ async function audioHandler(v) {
         let idUser = rows.idUser;
         var sexe;
         let responseUser = await fetch(`${urlApi}/userData/?idUser=` + idUser);
-        let userData = await responseSexe.json();
+        let userData = await responseUser.json();
 
         if (userData.rows[0].sexe == "0") sexe = "Homme";
         else sexe = "Femme";
