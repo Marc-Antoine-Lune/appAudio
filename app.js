@@ -110,6 +110,7 @@ function sendLocation(userId) {
     fetch(`${urlApi}/locationName`, {
             headers: { "Content-Type": "application/json; charset=utf-8" },
             method: 'POST',
+            mode: 'cors',
             body: JSON.stringify({
                 "idLoc": id,
                 "village": document.getElementById("adress").value,
@@ -131,6 +132,7 @@ function sendUser(userId) {
     fetch(`${urlApi}/user`, {
             headers: { "Content-Type": "application/json; charset=utf-8" },
             method: 'POST',
+            mode: 'cors',
             body: JSON.stringify({
                 "idUser": userId,
                 "age": document.getElementById('age').value,
@@ -154,6 +156,7 @@ function sendAudio(audio, id) {
 
     fetch(`${urlApi}/audio`, {
             method: 'POST',
+            mode: 'cors',
             body: formData
         })
         .then(response => response.json())
