@@ -1,0 +1,51 @@
+#map {
+    height: 100vh;
+}
+
+#noMap {
+    height: 100vh;
+}
+
+.logo {
+    width: 100%;
+}
+
+#mapid {
+    height: 100vh;
+}
+
+#adress {
+    width: 50%;
+}
+
+.search {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.vocal {
+    text-align: center;
+}
+
+#progress-bar {
+    margin-top: 15px;
+}
+
+.progress::-webkit-progress-value {
+    transition: width 0.5s ease;
+}
+
+.form {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 90%;
+}
+
+.textarea {
+    min-height: inherit;
+    height-min: 120px;
+}
+
+.leaflet-popup-content {
+    width: 300px;
+}

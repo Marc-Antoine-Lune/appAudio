@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <link rel="stylesheet" href="../CesitApp/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="../CesitApp/app.js"></script>
+
+    <title>Cesit App</title>
+</head>
+
+<body>
+    <div class="columns is-gapless">
+        <div class="column is-one-third" id="noMap">
+            <div class="explanation">
+                <p>Explications: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nam, voluptatem esse ratione doloribus consectetur veniam nemo numquam aliquid eaque dolor aliquam.</p>
+
+            </div>
+            <div class="search">
+                <input class="input" id="adress" type="text" placeholder="Recherche">
+                <button class="button is-primary" onclick="search()">Recherche</button>
+
+            </div>
+
+            <div class="form">
+                <div class="field">
+                    <label class="label is-small">Sexe:</label>
+                    <div class="control">
+                        <div class="select is-small">
+                            <select id="sexe">
+                                  <option>H</option>
+                                  <option>F</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label is-small">Age: </label>
+                    <div class="control">
+                        <input id="age" class="input is-small" type="text" placeholder="Text input">
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label class="label is-small">Votre Village/Ville </label>
+                    <div class="control">
+                        <input id="residence" class="input is-small" type="text" placeholder="Text input">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label is-small">Email: </label>
+                    <div class="control has-icons-left">
+                        <input id="mail" class="input is-small" type="email" placeholder="Email input" value="hello@">
+                        <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label is-small">Commentaires</label>
+                    <div class="control">
+                        <textarea class="textarea" id="coms" placeholder="Textarea" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                    <input type="checkbox">
+                    I agree to the <a href="#">terms and conditions</a>
+                  </label>
+                    </div>
+                </div>
+
+                <div class="vocal">
+                    <button class="button is-primary is-rounded" onclick="record()">
+                                <span class="icon is-large">
+                                 <i class="fas fa-microphone-alt"></i>
+                                </span>
+                                   <span>Enregistrer</span>
+                        </button>
+                    <progress id="progress-bar" class="progress is-info is-small" value="0" max="100"></progress>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="column is-two-third" id="map">
+            <div id="mapid">
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
