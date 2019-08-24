@@ -16,50 +16,75 @@
 </head>
 
 <body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>La plupart des noms officiels des communes de Corse ont une forme toscane, toscanisante voire italianisante.</p>
+            <p>Ils ont une forme traditionnelle corse véhiculée par l'oralité.
+            </p>
+            <p>En trois secondes, quelques clics et quelques syllabes, diffusons ce patrimoine immatériel.</p>
+            <h4 class="title is-4">Localisez un enregistrement</h4>
+            <p> Saisissez le nom de la commune que vous souhaitez partager.</p>
+            <p>Un marqueur bleu apparaît.</p>
+            <h4 class='title is-4'>Partagez</h4>
+            <p>Prononcez le toponyme après avoir appuyé sur enregistrer.</p>
+            <p>C'est à vous, vous avez trois secondes !</p>
+            <h4 class='title is-4'>Explorez</h4>
+            <p>Les noms des communes en saisissant le nom officiel de la commune.</p>
+            <p>(Exemples : Cuttoli-Corticchiato, Bocognano, Appietto )</p>
+        </div>
+
+    </div>
+
+    </div>
     <div class="columns is-gapless">
         <div class="column is-one-third" id="noMap">
             <div class="explanation">
-                <p>Explications: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nam, voluptatem esse ratione doloribus consectetur veniam nemo numquam aliquid eaque dolor aliquam.</p>
+                <h5 class="title is-5">Les noms des communes de Corse</h5>
+                <a class="button is-small is-info" onclick="showModal()">En savoir plus</a>
 
             </div>
             <div class="search">
                 <input class="input" id="adress" type="text" placeholder="Recherche">
-                <button class="button is-primary" onclick="search()">Recherche</button>
+                <button id="myBtn" class="button is-primary" onclick="search()">Recherche</button>
 
             </div>
 
             <div class="form">
                 <div class="field">
-                    <label class="label is-small">Sexe:</label>
-                    <div class="control">
-                        <div class="select is-small">
+                    <label class="label is-small">Sessu / Sexe</label>
+                    <div class="control ">
+                        <div class="select is-primary is-small">
                             <select id="sexe">
                                   <option>H</option>
                                   <option>F</option>
+                                  <option>Autres</option>
                                 </select>
                         </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label is-small">Age: </label>
+                    <label class="label is-small">Età / âge </label>
                     <div class="control">
-                        <input id="age" class="input is-small" type="text" placeholder="Text input">
+                        <input id="age" class="input is-small" type="text" placeholder="">
                     </div>
                 </div>
 
 
                 <div class="field">
-                    <label class="label is-small">Votre Village/Ville </label>
+                    <label class="label is-small">U vostru paesi / Votre village </label>
                     <div class="control">
-                        <input id="residence" class="input is-small" type="text" placeholder="Text input">
+                        <input id="residence" class="input is-small" type="text" placeholder="">
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label is-small">Email: </label>
+                    <label class="label is-small">Mail: </label>
                     <div class="control has-icons-left">
-                        <input id="mail" class="input is-small" type="email" placeholder="Email input" value="hello@">
+                        <input id="mail" class="input is-small" type="email" placeholder="Email input" value="cutuli@">
                         <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
@@ -67,27 +92,20 @@
                 </div>
 
                 <div class="field">
-                    <label class="label is-small">Commentaires</label>
+                    <label class="label is-small">Cummenti/Commentaires</label>
                     <div class="control">
-                        <textarea class="textarea" id="coms" placeholder="Textarea" rows="1"></textarea>
+                        <textarea class="textarea" id="coms" placeholder="" rows="1"></textarea>
                     </div>
                 </div>
 
-                <div class="field">
-                    <div class="control">
-                        <label class="checkbox">
-                    <input type="checkbox">
-                    I agree to the <a href="#">terms and conditions</a>
-                  </label>
-                    </div>
-                </div>
+
 
                 <div class="vocal">
                     <button class="button is-primary is-rounded" onclick="record()">
                                 <span class="icon is-large">
                                  <i class="fas fa-microphone-alt"></i>
                                 </span>
-                                   <span>Enregistrer</span>
+                                   <span>Arrighjistrà / Enregistrer</span>
                         </button>
                     <progress id="progress-bar" class="progress is-info is-small" value="0" max="100"></progress>
                 </div>
