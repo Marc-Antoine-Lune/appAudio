@@ -114,12 +114,12 @@ async function record() {
 
                 setTimeout(async() => {
                     await sendAudio(audioBlob, id);
-                    search();
+
                 }, 3000);
 
                 setTimeout(() => {
                     search();
-                }, 6000);
+                }, 10000);
 
             });
 
