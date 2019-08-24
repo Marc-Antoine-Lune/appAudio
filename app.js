@@ -75,7 +75,7 @@ function search() {
                 var marker = L.marker([lat, long], { draggable: true }).addTo(layerGroup);
                 marker.closePopup();
                 setTimeout(() => {
-                    marker.bindPopup("<ul id='audio1'></ul></div> ").openPopup();
+                    marker.bindPopup("<div><h4 class='title is-4'>Pronciation des noms des communes<h4> <ul id='audio1'></ul></div> ").openPopup();
                     macarte.setView([lat, long], 11);
 
                     audioHandler(document.getElementById("adress").value);
@@ -216,7 +216,7 @@ async function audioHandler(v) {
         else sexe = "Femme";
         var theRow = rows.audio;
         var theSentence = document.createElement('span');
-        theSentence.innerHTML = `Prononcer par ${sexe}, ${userData.rows[0].age} originaire de ${userData.rows[0].residence}`
+        theSentence.innerHTML = `Prononcer par ${sexe}, ${userData.rows[0].age} ans, originaire de ${userData.rows[0].residence}`
         let theToken = await fetch(`${urlApi}/urlAudio/?fileName=` + theRow);
         var url = url1 + rows.audio + url2 + theToken.token;
         var theDiv = document.getElementById("audio1");
