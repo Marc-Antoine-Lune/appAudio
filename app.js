@@ -106,7 +106,7 @@ async function record() {
                 var responseUser = await sendUser(userId);
 
                 setTimeout(() => {
-                    var response = await sendLocation(userId);
+                    var response = sendLocation(userId);
                     sendAudio(audioBlob, id);
 
                 }, 3000);
