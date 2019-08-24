@@ -105,19 +105,26 @@ async function record() {
                 var userId = await generate();
                 var responseUser = await sendUser(userId);
 
-                setTimeout(() => {
-                    var response = sendLocation(userId);
-                    sendAudio(audioBlob, id);
+                setTimeout(async() => {
+                    var response = await sendLocation(userId);
 
-                }, 3000);
+
+                }, 2000);
             });
 
-            setTimeout(() => {
-                mediaRecorder.stop();
+            setTimeout(async() => {
+                var response = await sendLocation(userId);
+                await sendAudio(audioBlob, id);
+
             }, 3000);
-
-
         });
+
+    setTimeout(() => {
+        mediaRecorder.stop();
+    }, 3000);
+
+
+});
 }
 
 var progressArr = [10, 50, 75, 100];
