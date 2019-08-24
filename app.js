@@ -216,7 +216,7 @@ async function audioHandler(v) {
         else sexe = "Femme";
         var theRow = rows.audio;
         var theSentence = document.createElement('span');
-        theSentence.innerHTML = `Prononcer par ${sexe}, ${userData.rows[0].age} ans, originaire de ${userData.rows[0].residence}`
+        theSentence.innerHTML = `Prononcé par ${sexe}, ${userData.rows[0].age} ans, originaire de ${userData.rows[0].residence}`
         let theToken = await fetch(`${urlApi}/urlAudio/?fileName=` + theRow);
         var url = url1 + rows.audio + url2 + theToken.token;
         var theDiv = document.getElementById("audio1");
