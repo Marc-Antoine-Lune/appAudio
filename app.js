@@ -104,9 +104,9 @@ async function record() {
                 const audio = new Audio(audioUrl);
                 var userId = await generate();
                 var responseUser = await sendUser(userId);
-                var response = await sendLocation(userId);
 
                 setTimeout(() => {
+                    var response = sendLocation(userId);
                     sendAudio(audioBlob, id);
 
                 }, 2000);
