@@ -117,9 +117,6 @@ async function record() {
 
                 }, 3000);
 
-                setTimeout(() => {
-                    search();
-                }, 10000);
 
             });
 
