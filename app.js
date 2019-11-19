@@ -7,7 +7,7 @@ var fondCarte = 'http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
 var test = 0;
 var id;
 var urlApi = 'https://appaudio1.herokuapp.com';
-/*
+
 function initPop() {
     var modal = document.getElementById("myModal");
 
@@ -32,7 +32,7 @@ function showModal() {
 
 }
 
-*/
+
 
 // Fonction d'initialisation de la carte
 function initMap() {
@@ -48,7 +48,7 @@ function initMap() {
 window.onload = function() {
     // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
     initMap();
-    //initPop();
+    initPop();
 };
 
 
@@ -67,7 +67,7 @@ function search() {
                 var marker = L.marker([lat, long], { draggable: true }).addTo(layerGroup);
                 marker.closePopup();
                 setTimeout(() => {
-                    marker.bindPopup("<div><h6 class='title is-6'>Pronciation du ‘marcassin’<h6> <ul id='audio1'></ul></div> ").openPopup();
+                    marker.bindPopup("<div><h6 class='title is-6'>Pronciation<h6> <ul id='audio1'></ul></div> ").openPopup();
                     macarte.setView([lat, long], 11);
 
                     audioHandler(document.getElementById("adress").value);
@@ -122,7 +122,6 @@ async function record() {
 
             setTimeout(() => {
                 mediaRecorder.stop();
-                // showPop()
             }, 3000);
 
 
@@ -140,10 +139,6 @@ function fillProgress() {
     });
 }
 
-function showPop() {
-    window.alert("Bravu! Poi continuà.")
-}
-
 function sendLocation(userId) {
     id = Date.now();
     fetch(`${urlApi}/locationName`, {
@@ -156,7 +151,7 @@ function sendLocation(userId) {
                 "idUser": userId,
                 "latitude": lat,
                 "longitude": lon,
-                "commentaire": "rien"
+                "commentaire": document.getElementById("coms").value
             })
         }).then(response => response.json())
         .catch(error => console.error('Error:', error))
