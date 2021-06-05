@@ -67,7 +67,7 @@ function search() {
                 var marker = L.marker([lat, long], { draggable: true }).addTo(layerGroup);
                 marker.closePopup();
                 setTimeout(() => {
-                    marker.bindPopup("<div><h6 class='title is-6'>Pronciation<h6><p id='no'></p> <ul id='audio1'></ul></div> ").openPopup();
+                    marker.bindPopup("<div><h6 class='title is-6'>Pronciation<h6><span id='no'></span> <ul id='audio1'></ul></div> ").openPopup();
                     macarte.setView([lat, long], 11);
 
                     audioHandler(document.getElementById("adress").value);
