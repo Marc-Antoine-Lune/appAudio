@@ -206,6 +206,7 @@ async function audioHandler(v) {
 
     let url1 = "https://firebasestorage.googleapis.com/v0/b/appaudio-dae64.appspot.com/o/";
     let url2 = "?alt=media&token="
+    console.log(data.rows.length);
     if(data.rows.length == 0 ){
         console.log("test");
         let no = document.getElementById('audio1');
