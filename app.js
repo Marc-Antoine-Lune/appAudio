@@ -67,7 +67,7 @@ function search() {
                 var marker = L.marker([lat, long], { draggable: true }).addTo(layerGroup);
                 marker.closePopup();
                 setTimeout(() => {
-                    marker.bindPopup("<div><h6 class='title is-6'>Pronciation<h6> <ul id='audio1'></ul></div> ").openPopup();
+                    marker.bindPopup("<div><h6 class='title is-6'>Pronciation<h6><p id='no'></p> <ul id='audio1'></ul></div> ").openPopup();
                     macarte.setView([lat, long], 11);
 
                     audioHandler(document.getElementById("adress").value);
@@ -206,6 +206,11 @@ async function audioHandler(v) {
 
     let url1 = "https://firebasestorage.googleapis.com/v0/b/appaudio-dae64.appspot.com/o/";
     let url2 = "?alt=media&token="
+    if(data.rows.length == 0 ){
+        let no = document.getElementById('no');
+        no.innerHTML = "Aucun enregistrement";
+    }
+
     data.rows.forEach(async rows => {
         let idUser = rows.idUser;
         var sexe;
