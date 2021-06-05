@@ -207,8 +207,11 @@ async function audioHandler(v) {
     let url1 = "https://firebasestorage.googleapis.com/v0/b/appaudio-dae64.appspot.com/o/";
     let url2 = "?alt=media&token="
     if(data.rows.length == 0 ){
-        let no = document.getElementById('no');
-        no.innerHTML = "Aucun enregistrement";
+        console.log("test");
+        let no = document.getElementById('audio1');
+        var s = document.createElement('span');
+        s.innerHTML = "Aucun enregistrement";
+        no.appendChild(s);
     }
 
     data.rows.forEach(async rows => {
